@@ -1,0 +1,21 @@
+if songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?
+    We could use information from the songs database such as danceability, loudness, energy, valence and tempo to decide the aura of the user.
+    we can get avarages of all the data as follows:
+        energy          0.66
+        danceability    0.72
+        loudness        -5.68
+        valence         0.48
+        tempo           120
+
+    According to spotify:
+    Energy represents Intensity and Activity.
+    Danceability represents How suitable a track is for dancing.
+    Valence represents Musical Positiveness.
+    Tempo represents Speed or Pace
+
+    Generally songs with high valence are concidered positive(happy, cheerful, euphoric)
+    Songs with low valence are more negative(sad, depressed, angry)
+
+Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener. What better ways of calculating this aura would you propose?
+    The database doesn't have any specified mood for the songs so the result is just an guess with the data available.
+    In the given database the songs data is limited to only 100 songs so the audio aura might be incorrect.
