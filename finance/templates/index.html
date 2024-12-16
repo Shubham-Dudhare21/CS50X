@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    CS50 Finance
+{% endblock %}
+
+{% block main %}
+
+    <div class="mb-3">
+        <p class="greet_home">Hello, {{ username }}.</p>
+        <p class="greet_home2">Welcome to CS50 Finance.</p>
+
+    </div>
+    <div class="mb-3">
+        <table class="balance">
+            <tr>
+                <td>Current Balance</td>
+                <td>{{ cash }}</td>
+                <td>Total Value</td>
+                <td>{{ total_value }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Company Name</th>
+                <th>Symbol</th>
+                <th>Number of Shares</th>
+                <th>Price per stock</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in stock_data %}
+                <tr>
+                    <td>{{ row["company_name"] }}</td>
+                    <td>{{ row["symbol"] }}</td>
+                    <td>{{ row["shares"] }}</td>
+                    <td>{{ usd(row["current_price"]) }}</td>
+                    <td>{{ usd(row["current_price"] * row["shares"]) }}</td>
+                </tr>
+            {% endfor %}
+
+            <tr class="homepage_last_line">
+                <td type="hidden"></td>
+                <td type="hidden"></td>
+                <td type="hidden"></td>
+                <td>TOTAL</td>
+                <td>{{ usd(total_stocks_value) }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="mb-3">
+        THIS is CS50
+    </div>
+{% endblock %}

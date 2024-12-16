@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+
+    <form action="/quote" method="post">
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" type="search" autofocus autocomplete="off" placeholder="Quote search" name="symbol">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Company Name</th>
+                <th>Latest Price</th>
+                <th>Symbol</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ quotes.name }}</td>
+                <td>{{ "%.2f" | format(quotes.price) }}</td>
+                <td>{{ quotes.symbol }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}
