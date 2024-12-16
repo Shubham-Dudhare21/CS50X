@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Which of the following best describes the feeling you get when your Tideman [Week 3] finally works after hours / days?</h3>
+                <button class="mcq">Meh, it was bound to work eventually.</button>
+                <button class="mcqans">I am the master of the universe!</button>
+                <button class="mcq">Time to rewrite everything from scratch just for fun.</button>
+                <button class="mcq">Quick, close everything before it breaks again!</button>
+                <button class="mcq">Why is this working?</button>
+                <p id="result"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What is the process of finding and fixing errors in a program called?</h3>
+                <input type="text"></input>
+                <button id="enter">Check Answer</button>
+                <p id="result_"></p>
+            </div>
+        </div>
+    </body>
+    <script>
+        //answers: 'I am the master of the universe!' 'debugging'
+        document.addEventListener('DOMContentLoaded', function() {
+            let mcqans = document.querySelector('.mcqans');
+            mcqans.addEventListener('click', function() {
+                mcqans.style.backgroundColor = 'green';
+                document.getElementById('result').innerHTML = "CORRECT";
+            });
+
+            let mcq = document.getElementsByClassName('mcq');
+            for (let i = 0; i < mcq.length; i++){
+                mcq[i].addEventListener('click', function(){
+                    mcq[i].style.backgroundColor = 'red';
+                    document.getElementById('result').innerHTML = "INCORRECT";
+                })
+            }
+
+            document.getElementById('enter').addEventListener('click', function() {
+                let answer = document.getElementsByTagName('input')[0].value;
+                if(answer.toLowerCase() == 'debugging'){
+                    document.getElementsByTagName('input')[0].style.backgroundColor = 'green';
+                    document.getElementById('result_').innerHTML = "CORRECT";
+                } else {
+                    document.getElementsByTagName('input')[0].style.backgroundColor = 'red';
+                    document.getElementById('result_').innerHTML = "INCORRECT";
+                }
+            });
+        });
+    </script>
+</html>

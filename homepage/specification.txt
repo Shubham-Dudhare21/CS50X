@@ -1,0 +1,16 @@
+nav
+div
+a
+button
+span
+ul
+li
+hr
+form
+input
+
+padding
+text-align
+font-size
+color
+background-color
