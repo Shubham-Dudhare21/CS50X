@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    Hello, {% if name_placeholder %} {{ name_placeholder }} {% else %}World!{% endif %}
+    <p id="warn">{{ warning_ph }}</p>
+    <style>
+        #warn {
+            color: red;
+        }
+    </style>
+{% endblock %}

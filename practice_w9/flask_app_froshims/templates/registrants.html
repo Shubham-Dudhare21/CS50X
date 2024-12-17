@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <p class="sucess">{{ sucess_placeholder }}</p>
+
+    <style>
+        .sucess {
+            color: {{ color_placeholder }};
+        }
+    </style>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Registered Sport</th>
+            <th></th>
+        </tr>
+        {% for name in students %}
+            <tr>
+                <td>{{ name.name }}</td>
+                <td>{{ name.sport }}</td>
+                <td>
+                    <form action="/deregister" method="post">
+                        <input type="hidden" name="id" value="{{ name.id }}">
+                        <button type="submit">Deregister</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <form action="/">
+        <button type="submit">RETURN TO FORM</button>
+    </form>
+
+{% endblock %}

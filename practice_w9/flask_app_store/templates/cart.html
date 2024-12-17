@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <ol>
+        {% for book in books %}
+            <li>{{ book["name"] }}</li>
+        {% endfor %}
+    </ol>
+
+{% endblock %}

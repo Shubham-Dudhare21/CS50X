@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <form action="/add_book" method="post">
+        <input autofocus autocomplete="off" name="name" placeholder="Title">
+        <input autocomplete="off" name="price" placeholder="Price">
+        <button type="submit">Submit</button>
+    </form>
+
+{% endblock %}
